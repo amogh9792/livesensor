@@ -1,10 +1,14 @@
+import logging
+
 from sensor.exception import SensorException
+from sensor.logger import logging
 import os
 import sys
 
 def test_exception():
     try:
-        a = 1/0
+        logging.info("hello")
+
     except Exception as e:
         raise SensorException(e,sys)
 
