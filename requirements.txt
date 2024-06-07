@@ -5,5 +5,7 @@ scikit-learn
 pymongo
 python-dotenv
 dnspython
+PyYAML
+dill
 
 -e . #editable mode
