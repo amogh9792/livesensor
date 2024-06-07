@@ -6,7 +6,7 @@ import dill
 import sys
 from sensor.exception import SensorException
 
-def read_yaml(file_path:str) -> dict:
+def read_yaml_file(file_path:str) -> dict:
     try:
 
         with open(file_path, 'rb') as yaml_file:

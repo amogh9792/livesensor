@@ -10,7 +10,7 @@ load_dotenv()
 class MongoDBClient:
     client = None
 
-    def __init__(self, database_name = DATABASE_NAME)->None:
+    def __init__(self, database_name = DATABASE_NAME) -> None:
         try:
             if MongoDBClient.client is None:
 

@@ -2,15 +2,11 @@ from sensor.exception import SensorException
 from sensor.logger import logging
 import os
 import sys
-from sensor.utils import dump_csv_to_mongodb
+from sensor.utils2 import dump_csv_to_mongodb
+from sensor.pipeline.training_pipeline import TrainPipeline
 
-# def test_exception():
-#     try:
-#         logging.info("hello")
-#
-#     except Exception as e:
-#         raise SensorException(e,sys)
-
+training_pipeline = TrainPipeline()
+training_pipeline.run_train_pipeline()
 
 if __name__ == "__main__":
 
@@ -19,8 +15,3 @@ if __name__ == "__main__":
     collection_name = "sensor"
 
     dump_csv_to_mongodb(file_path, database_name, collection_name)
-
-    # try:
-    #     test_exception()
-    # except Exception as e:
-    #     print(e)
