@@ -46,19 +46,23 @@ def save_numpy_array_data(file_path: str, array: np.array):
 
         raise SensorException(e,sys) from e
 
-def load_numpy_array_data(file_path: str) -> np.array:
+def load_numpy_array_data(file_path: str) -> np.ndarray:
     """
-    Load numpy array data from file
-    file_path: str location of file to load
-    return: np.array data loaded
+    Load numpy array data from file.
+
+    Parameters:
+    file_path (str): Location of file to load.
+
+    Returns:
+    np.ndarray: Numpy array loaded from file.
     """
     try:
-        with open(file_path, "rb") as file_obj:
-            return np.array(file_obj)
+        loaded_array = np.load(file_path)
+        return loaded_array
 
     except Exception as e:
+        raise SensorException(f"Error loading numpy array from {file_path}: {e}", sys) from e
 
-        raise SensorException(e,sys) from e
 
 def save_object(file_path: str, obj: object) -> None:
     try:

@@ -75,6 +75,7 @@ class ModelTrainer:
             classification_test_metric = get_classification_score(y_true=y_test, y_pred=y_test_pred)
 
             # Overfitting and Underfitting
+
             diff = abs(classification_train_metric.f1_score - classification_test_metric.f1_score)
 
             if diff > self.model_trainer_config.overfitting_underfitting_threshold:
